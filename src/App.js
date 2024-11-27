@@ -16,9 +16,9 @@ function App(){
     setSelectedRows(updatedRows);
 
     // Update base row logic
-    if (updatedRows.length > 0) {
+    if (updatedRows.length > 0 && (!baseRow || baseRow == row)) {
       setBaseRow(updatedRows[0]); // First selected row as Base Row
-    } else {
+    } else if(!updatedRows.length) {
       setBaseRow(null); // Clear base row if no rows selected
     }
   };
